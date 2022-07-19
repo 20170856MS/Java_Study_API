@@ -32,7 +32,11 @@ public class StringMain1 {
 		//ss2.studyIndexOfEx1();
 		//ss2.studyIndexOf();
 		//ss2.studySubString();
-		ss2.ex2();
+		//ss2.ex2();
+		StringStudy3 ss3 = new StringStudy3();
+		//ss3.studySplit();
+		//ss3.studySplit2();
+		ss3.studySplit3();
 		
 	}
 
