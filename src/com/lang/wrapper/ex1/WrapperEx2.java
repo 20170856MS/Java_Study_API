@@ -18,6 +18,7 @@ public class WrapperEx2 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("주민등록번호를 입력하세요 : ");
 		String number = sc.next();
+		//1. subSting(
 		String[] numbers = number.split("-");
 		String numb = numbers[0]+numbers[1];
 		System.out.println(numb);

@@ -32,8 +32,14 @@ public class WrapperEx1 {
 		
 		private void age(String number) {
 			String year = number.substring(0,2);
+			char ch = number.charAt(7);// 1900,2000
+			String cen = "20";
+			if (ch=='1' || ch=='2') {
+				cen = "19";
+			}
+			year=cen+year;
 			int yea= Integer.parseInt(year);
-			yea=22-yea+1;
+			yea=2022-yea;
 			System.out.println("나이 : "+yea);
 		}
 		

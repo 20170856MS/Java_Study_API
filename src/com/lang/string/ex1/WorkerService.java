@@ -1,5 +1,7 @@
 package com.lang.string.ex1;
 
+import java.util.StringTokenizer;
+
 public class WorkerService {
 	
 	private String info;
@@ -26,17 +28,29 @@ public class WorkerService {
 		System.out.println(this.sb);
 		String info = sb.toString();
 		String newInfo = info.replace(",", "-");
+		StringTokenizer st = new StringTokenizer(newInfo , "-");
+		WorkerDTO [] workerDTOs = new WorkerDTO[st.countTokens()];
+		int index = 0;
+		while(st.hasMoreTokens()) {
+			WorkerDTO workerDTO = new WorkerDTO();
+			workerDTO.setName(st.nextToken());
+			workerDTO.setDepartment(st.nextToken());
+			workerDTO.setJob(st.nextToken());
+			workerDTO.setPhone(st.nextToken());
+			workerDTOs[index] = workerDTO;
+			index++;
+		}
 		
 		String [] infos = newInfo.split(",");
 		for(String str:infos) {
 			System.out.println(str);
 		}
 		
-		WorkerDTO [] workerDTOs = new WorkerDTO[info.length()/4];
+		WorkerDTO [] workerDTOs1 = new WorkerDTO[info.length()/4];
 		
 		for(int i=0;i<info.length(); i++) {
 			WorkerDTO workerDTO = new  WorkerDTO();
-			workerDTOs[i/4] = workerDTO;
+			workerDTOs1[i/4] = workerDTO;
 			workerDTO.setName(infos[i].trim());
 			workerDTO.setDepartment(infos[++i].trim());
 			workerDTO.setJob(infos[++i].trim());
@@ -45,7 +59,7 @@ public class WorkerService {
 		
 		
 		
-		return workerDTOs;
+		return workerDTOs1;
 		
 	
 	
