@@ -12,6 +12,11 @@ public class WeatherMain {
 		// WeatherView	: 받아온 정보를 출력 (출력 전용)
 		// CityDTO		: 데이터 저장(데이터 박스)
 		
+		//ArrayList<ArrayList<ArrayList<String>>> all = new W=
+		
+		//WeatherController wc = new WeatherController();
+		//wc.start();
+		
 		WeatherView we = new WeatherView();
 		WeatherService ws = new WeatherService();
 		
