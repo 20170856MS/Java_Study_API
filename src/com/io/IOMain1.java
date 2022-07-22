@@ -21,8 +21,16 @@ public class IOMain1 {
 			e.printStackTrace();
 		}
 		
+		System.out.println("키보드에서 입력 후 엔터");
+		String msg;
+		try {
+			msg = br.readLine();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//System.out.println(msg);
 		
-
 	}
 
 }
