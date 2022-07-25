@@ -64,36 +64,23 @@ public class StudentDAO {
 		ArrayList<StudentDTO> ar2 = new ArrayList<StudentDTO>();
 		int result= 1;
 		File file = new File("C:\\study", "test1.txt");
-		FileWriter fw;
+		FileWriter fw =null;
 		Scanner sc = new Scanner(System.in);
 		
 		String ww;
-		boolean check = true;
+
 		try {
-			fw = new FileWriter(file, false);
-			FileReader fr = new FileReader(file);
-			while(check) {
-				System.out.println("이름 입력");
-				ww = sc.next();
-				fw.write(ww);
-				System.out.println("번호 입력");
-				ww = sc.next();
-				fw.write(","+ww);
-				System.out.println("국어점수 입력");
-				ww = sc.next();
-				fw.write(","+ww);
-				System.out.println("영어점수 입력");
-				ww = sc.next();
-				fw.write(","+ww);
-				System.out.println("수학 입력");
-				ww = sc.next();
-				fw.write(","+ww+"\n");
-				System.out.println("정보를 더 입력하시겠습니까? 1.네 2.아니요");
-				int a = sc.nextInt();
-				if(a==2) {
-					check =! check;
-					break;
-				}
+			fw = new FileWriter(file);
+			fw.write("\r\n");
+			for(StudentDTO studentDTO:ar) {
+				StringBuffer stringBuffer = new StringBuffer();
+				stringBuffer.append(studentDTO.getName()+",");
+				stringBuffer.append(studentDTO.getNum()+",");
+				stringBuffer.append(studentDTO.getKor()+",");
+				stringBuffer.append(studentDTO.getEng()+",");
+				stringBuffer.append(studentDTO.getMath()+",");
+				stringBuffer.append("\r\n");
+				fw.write(stringBuffer.toString());
 			}
 			fw.flush();
 		} catch (IOException e1) {

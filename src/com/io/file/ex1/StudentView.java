@@ -18,7 +18,7 @@ public class StudentView {
 	public void view(ArrayList<StudentDTO> ar) {
 		for(int i=0; i<ar.size(); i++) {
 			StudentDTO studentDTO =ar.get(i);
-			this.view(studentDTO);
+			//this.view(studentDTO);
 		}
 		
 	}
